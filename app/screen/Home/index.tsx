@@ -2,7 +2,7 @@ import React from 'react';
 import {RefreshControl, ScrollView, View} from 'react-native';
 import Header from '../../components/Header/index';
 import WeatherView from '../../components/WeatherView';
-import MoreInfo from '../../components/MoreInfo';
+// import MoreInfo from '../../components/MoreInfo';
 import ForeCast from '../../components/Forecast';
 import styles from './styles';
 

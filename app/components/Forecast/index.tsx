@@ -1,24 +1,32 @@
-import React, {useEffect, useState} from 'react';
-import {Animated, Dimensions, Text, TouchableOpacity, View} from 'react-native';
-import {BlurView} from 'rn-id-blurview';
+import React, { useEffect, useState } from 'react';
+import {
+  Animated,
+  Dimensions,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
+import { BlurView } from 'rn-id-blurview';
 import Today from './Today';
-import styles from './styles';
 import Weekly from './Weekly';
+import { useTranslation } from 'react-i18next';
+import styles from './styles';
 
 const data: any = [
-  {time: 12},
-  {time: 13},
-  {time: 14},
-  {time: 15},
-  {time: 16},
-  {time: 17},
-  {time: 18},
-  {time: 19},
-  {time: 20},
+  { time: 12 },
+  { time: 13 },
+  { time: 14 },
+  { time: 15 },
+  { time: 16 },
+  { time: 17 },
+  { time: 18 },
+  { time: 19 },
+  { time: 20 },
 ];
-const {width} = Dimensions.get('window');
+const { width } = Dimensions.get('window');
 
 function ForeCast() {
+  const { t } = useTranslation();
   const [isActive, setIsActive] = useState<number>(0);
   const [xTabOne, setXTabOne] = useState<number>(0);
   const [xTabTwo, setXTabTwo] = useState<number>(0);
@@ -63,9 +71,9 @@ function ForeCast() {
 
   return (
     <View>
-      <BlurView blurType="light" blurAmount={2} style={styles.container}>
+      <BlurView blurType='light' blurAmount={2} style={styles.container}>
         <View style={styles.titleView}>
-          <View style={{flexDirection: 'row', position: 'relative'}}>
+          <View style={{ flexDirection: 'row', position: 'relative' }}>
             <Animated.View
               style={{
                 ...styles.buttonActive,
@@ -83,7 +91,7 @@ function ForeCast() {
               onLayout={event => setXTabOne(event.nativeEvent.layout.x)}>
               <Text
                 style={[styles.titleText, !isActive && styles.titleTextActive]}>
-                Today
+                {t('forecast:today')}
               </Text>
             </TouchableOpacity>
             <TouchableOpacity
@@ -96,7 +104,7 @@ function ForeCast() {
                   styles.titleText,
                   Boolean(isActive) && styles.titleTextActive,
                 ]}>
-                Weekly
+                {t('forecast:weekly')}
               </Text>
             </TouchableOpacity>
           </View>

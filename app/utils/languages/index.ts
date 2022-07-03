@@ -1,6 +1,6 @@
 import i18n from 'i18next';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { initReactI18next } from 'react-i18next';
-import { AsyncStorage } from 'react-native';
 import * as RNLocalize from 'react-native-localize';
 
 import en from './en';

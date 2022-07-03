@@ -1,9 +1,9 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import { Text, View } from 'react-native';
 import styles from './styles';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import appStyles from '../../assets/styles/common';
-import {format} from 'date-fns';
+import { format } from 'date-fns';
 
 function Header() {
   const getToday = (): string => {
@@ -18,7 +18,7 @@ function Header() {
           ...styles.iconCircle,
           ...appStyles.boxShadowLight,
         }}>
-        <Icon name="bookmark" size={16} style={{color: '#403F46'}} />
+        <Icon name="bookmark" size={16} style={{ color: '#403F46' }} />
       </View>
       <View style={styles.centerContent}>
         <Text style={styles.cityName}>Ho Chi Minh City</Text>
@@ -30,7 +30,7 @@ function Header() {
           ...styles.iconCircle,
           ...appStyles.boxShadowLight,
         }}>
-        <Icon name="search-location" size={16} style={{color: '#403F46'}} />
+        <Icon name="search-location" size={16} style={{ color: '#403F46' }} />
       </View>
     </View>
   );
